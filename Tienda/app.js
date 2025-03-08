@@ -10,10 +10,10 @@ app.use(cors()); // Habilita CORS en todas las rutas
 
 const client = new Client({
   user: "postgres",
-  host: "192.168.1.6",
-  database: "jmlc",
-  password: "0942677998",
-  port: 5432,
+  host:"192.168.5.178",
+  database: "Laptops",
+  password: "Pedrito2002",
+  port: "5432",
 });
 
 
