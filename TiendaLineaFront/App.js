@@ -1,23 +1,26 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-import { insertProductos } from "./screens/insertProductos";
-import { insertVentas } from "./screens/insertVentas";
-import { listProductos } from "./screens/listProductos";
-import { listVentas } from "./screens/listVentas";
+import { InsertProductos } from "./screens/insertProductos";
+import { InsertVentas } from "./screens/insertVentas";
+import { ListProductos } from "./screens/listProductos";
+import { ListVentas } from "./screens/listVentas";
 import { NavigationContainer } from "@react-navigation/native";
 export default function App() {
   const StackContacts = createNativeStackNavigator();
   return (
     <NavigationContainer>
-      <StackContacts.Navigator initialRouteName="insertVentas">
+      <StackContacts.Navigator initialRouteName="listVentasNav">
         <StackContacts.Screen
-          component={insertProductos}
+          component={InsertProductos}
           name="insertProductos"
         />
-        <StackContacts.Screen component={insertVentas} name="insertVentas" />
-        <StackContacts.Screen component={listProductos} name="listProductos" />
-        <StackContacts.Screen component={listVentas} name="listVentas" />
+        <StackContacts.Screen component={InsertVentas} name="insertVentasNav" />
+        <StackContacts.Screen
+          component={ListProductos}
+          name="listProductosNav"
+        />
+        <StackContacts.Screen component={ListVentas} name="listVentasNav" />
       </StackContacts.Navigator>
     </NavigationContainer>
   );
