@@ -4,7 +4,7 @@ import { useState } from "react"
 import { saveProductoRest } from "../rest_client/tienda"
 
 
-export const insertProductos = ({ navigation }) => {
+export const InsertProductos = ({ navigation }) => {
   const [nombre, setNombre] = useState('');
   const [categoria, setCategoria] = useState('');
   const [precio, setPrecio] = useState('');
