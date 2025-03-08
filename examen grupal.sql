@@ -1,3 +1,19 @@
+/* CREATE DATABASE TiendaLinea
+    WITH
+    OWNER = postgres
+    ENCODING = 'UTF8'
+    LC_COLLATE = 'Spanish_Colombia.1252'
+    LC_CTYPE = 'Spanish_Colombia.1252'
+    TABLESPACE = pg_default
+    CONNECTION LIMIT = -1
+    IS_TEMPLATE = False;
+*/
+
+DROP TABLE IF EXISTS ventas;
+DROP TABLE IF EXISTS clientes;
+DROP TABLE IF EXISTS productos;
+DROP TABLE IF EXISTS categorias;
+
 -- Crear tabla de clientes
 CREATE TABLE clientes (
     cli_id SERIAL PRIMARY KEY,
@@ -52,3 +68,8 @@ INSERT INTO ventas (cli_id, pro_id, ven_cantidad, ven_fecha) VALUES
 (1, 1, 1, '2024-02-25'),
 (2, 2, 2, '2024-02-24'),
 (1, 3, 1, '2024-02-20');
+
+SELECT * FROM categorias;
+SELECT * FROM productos;
+SELECT * FROM clientes;
+SELECT * FROM ventas;
