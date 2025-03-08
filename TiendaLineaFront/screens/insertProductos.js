@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet, FlatList, Alert } from "react-native";
 import { Input, Button } from "@rneui/base"
 import { useState } from "react"
-//import { saveProdcutoRest} from "../rest_client"
+import { saveProductoRest } from "../rest_client/tienda"
 
 
-export const InsertProductos = () => {
+export const insertProductos = ({ navigation }) => {
   const [nombre, setNombre] = useState('');
   const [categoria, setCategoria] = useState('');
   const [precio, setPrecio] = useState('');
@@ -16,12 +16,12 @@ export const InsertProductos = () => {
   }
 
   const createProducto = () => {
-          saveProdcutoRest(
+          saveProductoRest(
               {
-                  nombre: nombre,
-                  categoria: categoria,
-                  precio: precio,
-                  stock: stock
+                  pro_nombre: nombre,
+                  cat_id: categoria,
+                  pro_precio: precio,
+                  pro_stock: stock
               },
               showMessage
           );
@@ -59,7 +59,7 @@ export const InsertProductos = () => {
         />
         <Button 
             title="GUARDAR" 
-            onPress={createPro} />
+            onPress={createProducto} />
        
 
     </View>
