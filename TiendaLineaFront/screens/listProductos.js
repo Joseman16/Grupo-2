@@ -1,8 +1,8 @@
 import { View, StyleSheet, FlatList, TouchableHighlight } from "react-native";
 import { ListItem, FAB } from "@rneui/base";
-import { getAllProductos } from "./productos";
 import { useState, useCallback } from "react";
 import { useFocusEffect } from "@react-navigation/native";
+import { getAllProductos } from "../rest_client/tienda";
 
 export const ProductoList = ({ navigation }) => {
   const [productoList, setProductoList] = useState([]);

@@ -6,18 +6,20 @@ import {
   Alert,
   TouchableHighlight,
 } from "react-native";
-import { useState, useEffect } from "react";
-import { getVentas } from "../rest_client/tiendalinea";
+import { useState, useEffect, useCallback } from "react";
+import { getAllVenta } from "../rest_client/tienda";
 import { Button, ListItem, FAB } from "@rneui/base";
+import { useFocusEffect } from "@react-navigation/native";
 export const ListVentas = () => {
   const [ventasList, setVentasList] = useState();
   const fnRefreshList = (list) => {
     setVentasList(list);
   };
-  /*useEffect(() => {
-    getVentas(fnRefreshList);
-    console.log("useEffect usado");
-  }, []);*/
+  useFocusEffect(
+    useCallback(() => {
+      getAllVenta(fnRefreshList);
+    }, [])
+  );
   const VentaItem = ({ venta }) => {
     return (
       <ListItem>
@@ -32,7 +34,7 @@ export const ListVentas = () => {
     <View>
       <Button
         onPress={() => {
-          getVentas(fnRefreshList);
+          getAllVenta(fnRefreshList);
           console.log(ventasList);
         }}
         title={"Actualizar"}

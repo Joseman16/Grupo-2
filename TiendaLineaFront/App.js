@@ -6,11 +6,13 @@ import { InsertVentas } from "./screens/insertVentas";
 import { ProductoList } from "./screens/listProductos";
 import { ListVentas } from "./screens/listVentas";
 import { NavigationContainer } from "@react-navigation/native";
+
 export default function App() {
   const StackContacts = createNativeStackNavigator();
+
   return (
     <NavigationContainer>
-      <StackContacts.Navigator initialRouteName="listProductosNav">
+      <StackContacts.Navigator initialRouteName="listVentasNav">
         <StackContacts.Screen
           component={InsertProductos}
           name="insertProductos"
