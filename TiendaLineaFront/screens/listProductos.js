@@ -5,7 +5,7 @@ import {
     TouchableHighlight,
 } from "react-native";
 import { ListItem, FAB } from "@rneui/base";
-import { getAllProductos } from "./productos";
+import { getAllProductos } from "../rest_client/tiendas";
 import { useState, useCallback } from "react";
 import { useFocusEffect } from "@react-navigation/native";
 
